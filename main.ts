@@ -19,8 +19,7 @@ function ensureReadableTree(dir: string): void {
   }
 }
 
-mkdirSync(OUTPUT_DIR, { recursive: true, mode: 0o755 });
-chmodSync(OUTPUT_DIR, 0o755);
+mkdirSync(OUTPUT_DIR, { recursive: true });
 
 const outGame = join(OUTPUT_DIR, 'game');
 const outShots = join(OUTPUT_DIR, 'screenshots');
