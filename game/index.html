@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nocturne Vault — Tactical Stealth</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header id="hud" aria-label="Game status">
+        <div class="hud-group">
+          <span class="brand">NOCTURNE VAULT</span>
+          <span class="pill" id="hud-level">FLOOR 1/3 · Gallery Wing</span>
+          <span class="pill pill-relic" id="hud-relic">RELIC: LOCKED</span>
+        </div>
+        <div class="hud-group">
+          <div class="suspicion-wrap" title="Global suspicion">
+            <span class="label">SUSPICION</span>
+            <div class="bar-track"><div class="bar-fill" id="hud-suspicion-bar"></div></div>
+            <span class="value" id="hud-suspicion-val">0%</span>
+          </div>
+          <span class="pill" id="hud-stance">HIDDEN</span>
+          <span class="pill pill-coin" id="hud-coins">COINS: 3</span>
+          <span class="pill" id="hud-timer">00:00</span>
+          <button id="btn-mute" class="hud-btn" type="button" title="Toggle sound (M)">AUDIO: ON</button>
+        </div>
+      </header>
+
+      <main id="stage">
+        <canvas id="game-canvas" width="1200" height="624"></canvas>
+
+        <div id="overlay-title" class="overlay hidden">
+          <div class="panel">
+            <p class="eyebrow">TACTICAL INFILTRATION</p>
+            <h1>NOCTURNE VAULT</h1>
+            <p class="subtitle">
+              Slip through three guarded wings, steal each museum relic, and extract unseen.
+            </p>
+            <div class="controls-grid">
+              <div><kbd>WASD</kbd> / <kbd>Arrows</kbd> Move</div>
+              <div><kbd>Shift</kbd> Crouch &amp; Conceal</div>
+              <div><kbd>Click</kbd> / <kbd>Space</kbd> Toss Decoy Coin</div>
+              <div><kbd>E</kbd> Grab Relic &middot; <kbd>R</kbd> Retry</div>
+            </div>
+            <button id="btn-start" class="primary-btn" type="button">BEGIN HEIST</button>
+          </div>
+        </div>
+
+        <div id="overlay-banner" class="overlay hidden">
+          <div class="panel">
+            <p class="eyebrow" id="banner-eyebrow">STATUS</p>
+            <h2 id="banner-title">FLOOR CLEARED</h2>
+            <p class="subtitle" id="banner-desc"></p>
+            <button id="btn-next" class="primary-btn" type="button">CONTINUE</button>
+          </div>
+        </div>
+      </main>
+
+      <footer id="footer-hint">
+        <span><kbd>WASD</kbd> Move</span>
+        <span><kbd>Shift</kbd> Crouch</span>
+        <span><kbd>Click</kbd> / <kbd>Space</kbd> Toss Decoy Coin</span>
+        <span><kbd>E</kbd> Grab Relic (or walk over)</span>
+        <span><kbd>R</kbd> Restart Floor</span>
+        <span><kbd>M</kbd> Mute</span>
+      </footer>
+    </div>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
